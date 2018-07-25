@@ -13,7 +13,7 @@ public class ListerPizzasService extends MenuService {
 		System.out.println("Liste des pizzas");
 		
 		for (Pizza p : dao.findAllPizzas()) {
-			System.out.println(p.code + " -> " + p.libelle + "("+p.prix + "€)");
+			System.out.println(p.getCode() + " -> " + p.getLibelle() + "("+p.getPrix() + "€)");
 		}
 	}
 

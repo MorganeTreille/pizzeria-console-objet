@@ -13,7 +13,7 @@ public class ModifierPizzaService extends MenuService{
 		questionUser.nextLine();
 		System.out.println("Mise à jour d'une pizza");
 		for (Pizza p : dao.findAllPizzas()) {
-			System.out.println(p.code + " -> " + p.libelle + "("+p.prix + "€)");
+			System.out.println(p.getCode() + " -> " + p.getLibelle() + "("+p.getPrix() + "€)");
 		}
 		System.out.println("Veuillez choisir le code de la pizza à modifier");
 		String codeModif = questionUser.nextLine();

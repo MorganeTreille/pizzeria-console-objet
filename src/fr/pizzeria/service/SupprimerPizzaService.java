@@ -13,13 +13,13 @@ public class SupprimerPizzaService extends MenuService {
 		questionUser.nextLine();
 		System.out.println("Suppression d'une pizza");
 		for (Pizza p : dao.findAllPizzas()) {
-			System.out.println(p.code + " -> " + p.libelle + "("+p.prix + "€)");
+			System.out.println(p.getCode() + " -> " + p.getLibelle() + "("+p.getPrix() + "€)");
 		}
-		System.out.println("Veuillez choisir le code de la pizza à supprimer :");
+				System.out.println("Veuillez choisir le code de la pizza à supprimer :");
 		String codeDelete = questionUser.nextLine();
 		dao.deletePizza(codeDelete);
+		
 	}
-
-	
-
 }
+
+
