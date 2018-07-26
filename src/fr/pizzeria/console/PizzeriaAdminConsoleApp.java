@@ -3,6 +3,7 @@ package fr.pizzeria.console;
 import java.util.Scanner;
 
 import fr.pizzeria.dao.PizzaArrayDao;
+import fr.pizzeria.exception.StockageException;
 import fr.pizzeria.service.MenuService;
 import fr.pizzeria.service.MenuServiceFactory;
 
@@ -27,7 +28,12 @@ public class PizzeriaAdminConsoleApp {
 			if (a != 99){
 				MenuServiceFactory option = new MenuServiceFactory();
 				MenuService menuService = option.getService(a);
-				menuService.executeUC(questionUser,dao);
+				try {
+					menuService.executeUC(questionUser,dao);
+				} catch (StockageException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else {	
 				System.out.println("Au revoir");
 			}
